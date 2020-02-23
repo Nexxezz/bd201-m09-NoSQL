@@ -7,7 +7,8 @@
     * copy labwork files to container:
     `docer cp /home/labwork/* cassandra:/home/`  
   * Create a Keyspace for KillrVideo
-    * use command `CREATE KEYSPACE killrvideo`
+    * use command `CREATE KEYSPACE killrvideo 
+    WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};`
   * Create a table to store video metadata 
     * go to videos.csv directory:  
        `/home/labwork/exersise-2`
