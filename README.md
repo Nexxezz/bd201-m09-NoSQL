@@ -37,4 +37,15 @@
      PRIMARY KEY (title,added_year));`  
     * `COPY videos_by_title_year FROM 'videos_by_title_year.csv' WITH HEADER=true;`
     * `SELECT * from videos_by_title_year LIMIT 10;`
-    * `SELECT * FROM videos_by_title_year WHERE added_year =2015;`     
+    * `SELECT * FROM videos_by_title_year WHERE added_year =2015;`  
+  * Create a 'videos_by_tag_year' table that allows range scans and ordering by year  
+    * `CREATE TABLE videos_by_tag_year( 
+        tag text, 
+        added_year int, 
+        video_id timeuuid, 
+        added_date timestamp, 
+        description text, 
+        title text, 
+        user_id uuid,  
+        PRIMARY KEY(tag,added_year)) 
+        WITH CLUSTERING ORDER BY(added_year DESC);`  
