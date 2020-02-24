@@ -1,5 +1,6 @@
 # bd201-m09-NoSQL
   * Please download the file  
+    * download file `https://courses.epam.com/asset-v1:EPAM+201BD+2019.1+type@asset+block/NoSQL_labwork.7z`
     * download cassandra docker container:  
     `docker pull cassandra`
     * run cassandra container:
