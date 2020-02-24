@@ -62,7 +62,7 @@
     width INT,);` (screehsot 12)
   * Alter an existing table and add additional columns
     * add columns 'tag' and 'video_ecoding' to videos table  
-      * `ALTER TABLE videos ADD tag TEXT` (screenshot 13)
+      * `ALTER TABLE videos ADD tag TEXT;` (screenshot 13)
       * `ALTER TABLE videos ADD encoding video_encoding;` (screesnhot 13)
     * load the data from videos_encoding.csv
       * `COPY videos(video_id,encoding) FROM 'videos_encoding.csv' WITH HEADER = TRUE;` (screenshot 14)
