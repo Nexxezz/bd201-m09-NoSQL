@@ -21,10 +21,12 @@
       added_date TIMESTAMP,
       desription TEXT, 
       title TEXT, user_id UUID);`
-    * `SELECT * FROM videos LIMIT 10;`  
-    * `SELECT COUNT(*) FROM videos;`
-    * `SELECT * FROM videos WHERE video_id=6c4cffb9-0dc4-1d59-af24-c960b5fc3652;`  
-    * `TRUNCATE videos;`
+    * query table  
+      * `SELECT * FROM videos LIMIT 10;`  
+      * `SELECT COUNT(*) FROM videos;`
+      * `SELECT * FROM videos WHERE video_id=6c4cffb9-0dc4-1d59-af24-c960b5fc3652;`  
+     * delete data from table
+       * `TRUNCATE videos;`
   * Load the data for the video table from a CSV file
     * `COPY videos FROM 'videos.csv' WITH HEADER=true;`
   * Create a new table that allows querying videos by title and year using a composite partition key
@@ -35,10 +37,11 @@
      desription TEXT, 
      user_id UUID, 
      video_id UUID,
-     PRIMARY KEY (title,added_year));`  
-    * `COPY videos_by_title_year FROM 'videos_by_title_year.csv' WITH HEADER=true;`
-    * `SELECT * from videos_by_title_year LIMIT 10;`
-    * `SELECT * FROM videos_by_title_year WHERE added_year =2015;`  
+     PRIMARY KEY (title,added_year));`
+    * query table  
+      * `COPY videos_by_title_year FROM 'videos_by_title_year.csv' WITH HEADER=true;`
+      * `SELECT * from videos_by_title_year LIMIT 10;`
+      * `SELECT * FROM videos_by_title_year WHERE added_year =2015;`  
   * Create a 'videos_by_tag_year' table that allows range scans and ordering by year  
     * `CREATE TABLE videos_by_tag_year( 
         tag TEXT, 
@@ -61,6 +64,6 @@
       * ` ALTER TABLE videos ADD encoding video_encoding;`
     * load the data from videos_encoding.csv
       * `COPY videos(video_id,encoding) FROM 'videos_encoding.csv' WITH HEADER = TRUE;`
-    * print resulting table  
+    * query resulting table
       * `SELECT * FROM videos LIMIT 10;`
        
