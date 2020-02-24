@@ -8,27 +8,27 @@
     `docer cp /home/labwork/* cassandra:/home/`  
   * Create a Keyspace for KillrVideo
     * `CREATE KEYSPACE killrvideo 
-    WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };`
+    WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };` (screenshot 1)
   * Create a table to store video metadata 
     * go to videos.csv directory:  
        `/home/labwork/exersise-2`
     * run cqlsh with `cqlsh` command 
     * use killrvideo keyspace:
-      * `USE killrvideo;` 
+      * `USE killrvideo;` (screenshot 1)
     * create table schema for videos:  
       * `CREATE TABLE videos(
       video_id TIMEUUID PRIMARY KEY,
       added_date TIMESTAMP,
       desription TEXT, 
-      title TEXT, user_id UUID);` 
+      title TEXT, user_id UUID);` (screenshot 2)
   * Load the data for the video table from a CSV file
-    * `COPY videos FROM 'videos.csv' WITH HEADER = TRUE;`
+    * `COPY videos FROM 'videos.csv' WITH HEADER = TRUE;` (screenshot 2)
     * query table  
-      * `SELECT * FROM videos LIMIT 10;`  
-      * `SELECT COUNT(*) FROM videos;`
-      * `SELECT * FROM videos WHERE video_id=6c4cffb9-0dc4-1d59-af24-c960b5fc3652;`  
+      * `SELECT * FROM videos LIMIT 10;` (screenshot 3) 
+      * `SELECT COUNT(*) FROM videos;` (screenshot 4)
+      * `SELECT * FROM videos WHERE video_id=6c4cffb9-0dc4-1d59-af24-c960b5fc3652;` (screenshot 5)
     * delete data from table  
-      * `TRUNCATE videos;`
+      * `TRUNCATE videos;` (screenshot 6)
   * Create a new table that allows querying videos by title and year using a composite partition key
     * `CREATE TABLE videos_by_title_year(
      title TEXT, 
@@ -37,12 +37,12 @@
      desription TEXT, 
      user_id UUID, 
      video_id UUID,
-     PRIMARY KEY (title,added_year));`
+     PRIMARY KEY (title,added_year));` (screenshot 7)
     * load the data from csv file  
-      * `COPY videos_by_title_year FROM 'videos_by_title_year.csv' WITH HEADER = TRUE;`
+      * `COPY videos_by_title_year FROM 'videos_by_title_year.csv' WITH HEADER = TRUE;` (screenshot 7)
     * query table  
-      * `SELECT * from videos_by_title_year LIMIT 10;`
-      * `SELECT * FROM videos_by_title_year WHERE added_year = 2015;`  
+      * `SELECT * from videos_by_title_year LIMIT 10;` (screenshot 8)
+      * `SELECT * FROM videos_by_title_year WHERE added_year = 2015;` (screenshot 9)  
   * Create a 'videos_by_tag_year' table that allows range scans and ordering by year  
     * `CREATE TABLE videos_by_tag_year( 
         tag TEXT, 
@@ -53,19 +53,19 @@
         title TEXT, 
         user_id UUID,  
         PRIMARY KEY(tag,added_year)) 
-        WITH CLUSTERING ORDER BY(added_year DESC);`  
+        WITH CLUSTERING ORDER BY(added_year DESC);` (screenshot 10 , screenshot 11) 
   * Create a user defined type  
     * `CREATE TYPE video_encoding ( 
     bit_rates SET<TEXT>, 
     encoding TEXT, 
     height INT, 
-    width INT,);`
+    width INT,);` (screehsot 12)
   * Alter an existing table and add additional columns
     * add columns 'tag' and 'video_ecoding' to videos table  
-      * `ALTER TABLE videos ADD tag TEXT`
-      * `ALTER TABLE videos ADD encoding video_encoding;`
+      * `ALTER TABLE videos ADD tag TEXT` (screenshot 13)
+      * `ALTER TABLE videos ADD encoding video_encoding;` (screesnhot 13)
     * load the data from videos_encoding.csv
-      * `COPY videos(video_id,encoding) FROM 'videos_encoding.csv' WITH HEADER = TRUE;`
+      * `COPY videos(video_id,encoding) FROM 'videos_encoding.csv' WITH HEADER = TRUE;` (screenshot 14)
     * query resulting table
-      * `SELECT * FROM videos LIMIT 10;`
+      * `SELECT * FROM videos LIMIT 2;` (screenshot 14)
        
