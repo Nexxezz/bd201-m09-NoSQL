@@ -5,7 +5,7 @@
     `docker pull cassandra`
     * run cassandra container:
     `docker run --name cassandra --network some-network -d cassandra`
-    * copy labwork files to container:
+    * copy labwork files from downloaded archive to container:
     `docer cp /home/labwork/* cassandra:/home/`  
   * Create a Keyspace for KillrVideo
     * `CREATE KEYSPACE killrvideo 
