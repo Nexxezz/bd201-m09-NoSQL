@@ -4,7 +4,7 @@
     `https://courses.epam.com/asset-v1:EPAM+201BD+2019.1+type@asset+block/NoSQL_labwork.7z`
     * download cassandra docker container  
     `docker pull cassandra`
-    * run cassandra container:
+    * run cassandra container
     `docker run --name cassandra --network some-network -d cassandra`
     * copy labwork files from downloaded archive to container
     `docer cp /home/labwork/* cassandra:/home/`  
@@ -14,7 +14,7 @@
     * run cqlsh with `cqlsh` command 
     * use killrvideo keyspace:
       * `USE killrvideo;` (screenshot 1)
-    * create table schema for videos:  
+    * create table schema for videos  
       * `CREATE TABLE videos(
       video_id TIMEUUID PRIMARY KEY,
       added_date TIMESTAMP,
