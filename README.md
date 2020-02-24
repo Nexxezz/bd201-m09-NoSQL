@@ -1,10 +1,12 @@
 # bd201-m09-NoSQL
-  * Please download the file  
+  * Please download the file
+    * download file  
+    `https://courses.epam.com/asset-v1:EPAM+201BD+2019.1+type@asset+block/NoSQL_labwork.7z`
     * download cassandra docker container:  
     `docker pull cassandra`
     * run cassandra container:
     `docker run --name cassandra --network some-network -d cassandra`
-    * copy labwork files to container:
+    * extract downloaded archive and copy labwork files to cassandra container:
     `docer cp /home/labwork/* cassandra:/home/`  
   * Create a Keyspace for KillrVideo
     * `CREATE KEYSPACE killrvideo 
