@@ -51,7 +51,8 @@
         title TEXT, 
         user_id UUID,  
         PRIMARY KEY(tag,added_year)) 
-        WITH CLUSTERING ORDER BY(added_year DESC);` (screenshot 10 , screenshot 11) 
+        WITH CLUSTERING ORDER BY(added_year DESC);` (screenshot 10) 
+    * `COPY videos_by_tag_year FROM 'videos_by_tag_year.csv' WITH HEADER = TRUE;` (screenshot 11)
   * Create a user defined type  
     * `CREATE TYPE video_encoding ( 
     bit_rates SET<TEXT>, 
