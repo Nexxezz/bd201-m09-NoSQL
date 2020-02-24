@@ -10,8 +10,6 @@
     * `CREATE KEYSPACE killrvideo 
     WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };` (screenshot 1)
   * Create a table to store video metadata 
-    * go to videos.csv directory:  
-       `/home/labwork/exersise-2`
     * run cqlsh with `cqlsh` command 
     * use killrvideo keyspace:
       * `USE killrvideo;` (screenshot 1)
