@@ -59,9 +59,10 @@
     encoding TEXT, 
     height INT, 
     width INT,);`
-    * alter videos table(add columns 'tag' and 'video_ecoding)  
+  * Alter an existing table and add additional columns
+    * add columns 'tag' and 'video_ecoding' to videos table  
       * `ALTER TABLE videos ADD tag TEXT`
-      * ` ALTER TABLE videos ADD encoding video_encoding;`
+      * `ALTER TABLE videos ADD encoding video_encoding;`
     * load the data from videos_encoding.csv
       * `COPY videos(video_id,encoding) FROM 'videos_encoding.csv' WITH HEADER = TRUE;`
     * query resulting table
