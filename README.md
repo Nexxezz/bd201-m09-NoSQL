@@ -12,7 +12,7 @@
     * `CREATE KEYSPACE killrvideo WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };` (screenshot 1)
   * Create a table to store video metadata 
     * run cqlsh with `cqlsh` command 
-    * use killrvideo keyspace:
+    * use killrvideo keyspace
       * `USE killrvideo;` (screenshot 1)
     * create table schema for videos  
       * `CREATE TABLE videos(
