@@ -1,15 +1,15 @@
 # bd201-m09-NoSQL
   * Please download the file  
-    * download file `https://courses.epam.com/asset-v1:EPAM+201BD+2019.1+type@asset+block/NoSQL_labwork.7z`
-    * download cassandra docker container:  
+    * download file  
+    `https://courses.epam.com/asset-v1:EPAM+201BD+2019.1+type@asset+block/NoSQL_labwork.7z`
+    * download cassandra docker container  
     `docker pull cassandra`
     * run cassandra container:
     `docker run --name cassandra --network some-network -d cassandra`
     * copy labwork files from downloaded archive to container:
     `docer cp /home/labwork/* cassandra:/home/`  
   * Create a Keyspace for KillrVideo
-    * `CREATE KEYSPACE killrvideo 
-    WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };` (screenshot 1)
+    * `CREATE KEYSPACE killrvideo WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1 };` (screenshot 1)
   * Create a table to store video metadata 
     * run cqlsh with `cqlsh` command 
     * use killrvideo keyspace:
